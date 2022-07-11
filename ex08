@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+void ft_print(int *tab, int size)
+{
+  int i;
+  int j;
+  int k;
+  int swap;
+  
+  i = 0;
+  j = 0;
+  k = 0;
+  while (i < size)
+  {
+    if (tab[j] < tab[i + 1])
+    {
+      j = i + 1; 
+    }
+    i ++;
+  }
+  swap = tab[k];
+  tab[k] = tab[j];
+  tab[j] = swap;
+  i = 0;
+  j = 0;
+  k ++;
+  while (k < size)
+   {
+    ft_print(tab, size);
+    printf("%d", tab[k]);
+  }
+}
+int main ()
+{
+  int tab[5] = {2, 7, 1, 14, 9};
+  ft_print(tab, 5);
+}

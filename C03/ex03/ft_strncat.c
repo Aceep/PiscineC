@@ -3,28 +3,19 @@
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
 
-	i = 0;
-	j = 0;
 	while (dest[i])
 		i ++;
-	while (j < nb)
+	if (nb == 0)
+		return (dest);
+	while (*src != '\0' && nb > 0)
 	{
-		dest[i] = src[j];
-		j ++;
+		dest[i] = *src;
 		i ++;
+		src++;
+		nb --;
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-int	main()
-{
-	char	dest[15];
-	char	*src = "source";
-
-	strcpy(dest, "dest:");
-	printf("%s", ft_strncat(dest, src, 3));
 }

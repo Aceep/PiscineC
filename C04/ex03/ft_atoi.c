@@ -19,7 +19,8 @@ char	*ft_count_space(char *str)
 		|| str[i] == '\f'
 		|| str[i] == '\n'
 		|| str[i] == '\r'
-		|| str[i] == '\v')
+		|| str[i] == '\v'
+		|| str[i] == '\t')
 		i ++;
 	return (&str[i]);
 }
@@ -31,13 +32,23 @@ int	ft_minus_count(char *str)
 
 	i = 0;
 	minus_count = 0;
-	while (str[i] == 43 || str[i] == 45)
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == 45)
 			minus_count++;
 		i ++;
 	}
 	return (minus_count);
+}
+
+int     ft_sign_count(char *str)
+{
+        int     i;
+
+        i = 0;
+        while (str[i] == '-' || str[i] == '+')
+                i ++;
+        return (i);
 }
 
 int	ft_atoi(char *str)
@@ -49,17 +60,17 @@ int	ft_atoi(char *str)
 	nb = 0;
 	str = ft_count_space(str);
 	i = ft_minus_count(str);
-	j = i;
-	while (str[i] && str[i] >= 48 && str[i] <= 57)
+	j = ft_sign_count(str);
+	while (str[j] && str[j] >= 48 && str[j] <= 57)
 	{
-		nb = nb * 10 + (str[i] - 48);
-		i ++;
+		nb = nb * 10 + (str[j] - 48);
+		j ++;
 	}
-	if (j % 2 != 0)
+	if (i % 2 != 0)
 		nb = -nb;
 	return (nb);
 }
-#include <stdio.h>
+/*#include <>
 
 int	main(int argc, char *argv[])
 {
@@ -71,9 +82,9 @@ int	main(int argc, char *argv[])
 		
 	while (i <  argc)
 	{
-		printf("%d\n", ft_atoi(argv[i]));
+		("%d\n", ft_atoi(argv[i]));
 		i ++;
 	}
 	}
 	return 0;
-}
+}*/

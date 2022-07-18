@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:04:28 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/16 18:38:27 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/17 12:12:01 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	ft_backtrack(int **tab, int id)
 {
 	int	value;
-	
+
 	if (id == 16 && everything_ok(tab))
 		return (1);
 	if (id < 16)
 	{
-		value  = 1;
+		value = 1;
 		while (value <= 4)
 		{
 			if (value_is_valid(tab, id, value))

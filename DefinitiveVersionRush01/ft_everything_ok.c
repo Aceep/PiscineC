@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_everything_ok.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/17 12:04:47 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/17 12:06:41 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fonctions.h"
 
 int	view_from_up(int **tab, int i)
@@ -42,7 +54,7 @@ int	view_from_down(int **tab, int i)
 		j --;
 	}
 	if (count_view != 0)
-		return(0);
+		return (0);
 	return (1);
 }
 
@@ -99,8 +111,9 @@ int	everything_ok(int **tab)
 	i = 1;
 	while (i <= 4)
 	{
-		if (!view_from_up(tab, i) || !view_from_down(tab, i) || !view_from_left(tab, i) || !view_from_right(tab, i))
-				return (0);
+		if (!view_from_up(tab, i) || !view_from_down(tab, i)
+			|| !view_from_left(tab, i) || !view_from_right(tab, i))
+			return (0);
 		i ++;
 	}
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:17:19 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/18 10:18:14 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/18 18:14:31 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_sqrt(int nb)
 	else
 		return (0);
 }
-/*
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -42,4 +42,4 @@ int	main(int argc, char *argv[])
 		}
 	}
 	return (0);
-}*/
+}

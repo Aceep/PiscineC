@@ -1,4 +1,16 @@
-int ft_fibonacci(int index)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 10:15:01 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/18 10:15:40 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_fibonacci(int index)
 {
 	if (index < 0)
 		return (-1);
@@ -8,7 +20,7 @@ int ft_fibonacci(int index)
 		return (1);
 	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -26,4 +38,4 @@ int	main(int argc, char *argv[])
 		}
 	}
 	return (0);
-}
+}*/

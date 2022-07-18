@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 10:17:19 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/18 10:18:14 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/17 12:56:28 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/17 12:57:17 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int	ft_recursive_factorial(int nb)
 {
-	int	sqrt;
+	int	fact;
 
-	sqrt = 1;
+	fact = 1;
 	if (nb < 0)
 		return (0);
-	while (sqrt * sqrt < nb)
-		sqrt ++;
-	if (sqrt * sqrt == nb)
-		return (sqrt);
-	else
-		return (0);
+	if (nb == 0)
+		return (1);
+	fact = (nb * ft_recursive_factorial(nb - 1));
+	return (fact);
 }
-/*
-#include <stdlib.h>
-#include <stdio.h>
 
-int	main(int argc, char *argv[])
+/*int	main(int argc, char *argv[])
 {
 	int	nb;
 
@@ -36,8 +31,8 @@ int	main(int argc, char *argv[])
 	{
 		while (argc > 1)
 		{
-			nb = atoi(argv[argc - 1]);
-			printf("%d\n", ft_sqrt(nb));
+			nb = (argv[argc - 1]);
+			("%d\n", ft_recursive_factorial(nb));
 			argc --;
 		}
 	}

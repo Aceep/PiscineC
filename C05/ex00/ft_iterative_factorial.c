@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 10:19:01 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/18 10:19:12 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_iterative_factorial(int nb)
 {
 	int	i;
@@ -16,6 +28,7 @@ int	ft_iterative_factorial(int nb)
 	}
 	return (nb);
 }
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -34,4 +47,4 @@ int	main(int argc, char *argv[])
 		}
 	}
 	return (0);
-}
+}*/

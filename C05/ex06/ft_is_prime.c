@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 10:17:19 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/18 10:18:14 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/18 10:12:42 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/18 11:49:07 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int	ft_is_prime(int nb)
 {
-	int	sqrt;
+	int	i;
 
-	sqrt = 1;
-	if (nb < 0)
+	if (nb <= 1)
 		return (0);
-	while (sqrt * sqrt < nb)
-		sqrt ++;
-	if (sqrt * sqrt == nb)
-		return (sqrt);
-	else
+	if (nb == 2)
+		return (1);
+	if (nb % 2 == 0)
 		return (0);
+	i = 3;
+	while (i < nb / 2)
+	{
+		if (nb % i == 0)
+			return (0);
+		i += 2;
+	}
+	return (1);
 }
 /*
 #include <stdlib.h>
@@ -37,9 +42,8 @@ int	main(int argc, char *argv[])
 		while (argc > 1)
 		{
 			nb = atoi(argv[argc - 1]);
-			printf("%d\n", ft_sqrt(nb));
-			argc --;
+			printf("%d est %d\n", nb, ft_is_prime(nb));
+		       argc --;
 		}
 	}
-	return (0);
 }*/

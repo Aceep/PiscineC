@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 10:16:14 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/18 10:16:29 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_iterative_power(int nb, int power)
 {	
 	int	i;
@@ -16,6 +28,7 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (nb);
 }
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -31,4 +44,4 @@ int	main(int argc, char *argv[])
 		printf("%d\n", ft_iterative_power(nb, power));
 	}
 	return (0);
-}
+}*/

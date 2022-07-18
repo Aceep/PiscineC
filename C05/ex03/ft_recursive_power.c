@@ -6,14 +6,12 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:20:08 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/18 10:21:01 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/18 12:54:49 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_recursive_power(int nb, int power)
 {
-	int	c;
-
 	if (power == 0)
 		return (1);
 	if (power < 0)

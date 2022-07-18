@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:55:41 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/18 12:43:44 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/18 13:56:10 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_find_next_prime(int nb)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (!ft_is_prime(nb + i))
 		i ++;
 	return (nb + i);

@@ -27,7 +27,7 @@ void	ft_putstr(char *argv)
 
 int	main(int argc,char **argv)
 {
-	if (argc == 1)
+	if (argc >= 1)
 		ft_putstr(argv[0]);
 	return (0);
 }

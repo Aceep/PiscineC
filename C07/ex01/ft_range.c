@@ -1,40 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 18:57:12 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/19 15:03:49 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/19 18:22:40 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/19 19:07:52 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_putchar(char *argv)
-{
-	int	i;
 
-	i = 0;
-	while (argv[i])
-	{
-		write(1, &argv[i], 1);
-		i ++;
-	}
-	write(1, "\n", 1);
-}
-
-int	main(int argc, char *argv[])
-{
-	int	i;
-
-	i = 1;
-	if (argc >= 2)
-	{
-		while (i < argc)
-		{
-			ft_putchar(argv[i]);
-			i ++;
-		}
-	}
-}		

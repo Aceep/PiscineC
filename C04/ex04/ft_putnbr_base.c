@@ -12,67 +12,17 @@
 
 #include <unistd.h>
 
-/*char	*ft_count_space(char *str)
+/*void	ft_putchar(char nb)
 {
-	int	i;
 
-	i = 0;
-	while (str[i] == 32
-		|| str[i] == '\f'
-		|| str[i] == '\n'
-		|| str[i] == '\r'
-		|| str[i] == '\v')
-		i ++;
-	return (&str[i]);
-}
-
-int	ft_minus_count(char *str)
-{
-	int	minus_count;
-	int	i;
-
-	i = 0;
-	minus_count = 0;
-	while (str[i] == 43 || str[i] == 45)
-	{
-		if (str[i] == 45)
-			minus_count++;
-		i ++;
-	}
-	return (minus_count);
-}
-
-int	ft_atoi(char *str)
-{
-	int	nb;
-	int	i;
-	int	j;
-
-	nb = 0;
-	str = ft_count_space(str);
-	i = ft_minus_count(str);
-	j = i;
-	while (str[i] && str[i] >= 48 && str[i] <= 57)
-	{
-		nb = nb * 10 + (str[i] - 48);
-		i ++;
-	}
-	if (j % 2 != 0)
-		nb = -nb;
-	return (nb);
+	write(1, &nb, 1);
 }*/
 
-void	ft_putchar(char nbr)
+void	ft_translate(long long int nb, char *base, int nb_base)
 {
-	write(1, &nbr, 1);
-}
-
-void	ft_translate(int nbr, char *base, int nb_base)
-{
-	if (nbr >= nb_base)
-		ft_translate(nbr / nb_base, base, nb_base);
-	nbr = base[nbr % nb_base];
-	ft_putchar(nbr);
+	if (nb >= nb_base)
+		ft_translate(nb / nb_base, base, nb_base);
+	write(1, &base[nb % nb_base], 1);
 }
 
 int	ft_count_base(char *base)
@@ -105,24 +55,37 @@ int	ft_count_base(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	nb_base;
+	long long int		nb;
+	int					nb_base;
 
-	if (nbr < 0)
-		nbr = -nbr;
+	nb = (long long)nbr;
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = -nb;
+	}
 	nb_base = ft_count_base(base);
 	if (nb_base != 0)
-		ft_translate(nbr, base, nb_base);
+		ft_translate(nb, base, nb_base);
 }
+/*#include <unistd.h>
 
-/*int	main(int argc, char *argv[])
+void	ft_putnbr_base(int nbr, char *base);
+
+int		main(void)
 {
-	int	i;
-
-	i = 1;
-	if (argc == 3)
-	{
-		ft_putnbr_base(ft_atoi(argv[i]), argv[i + 1]);
-		write(1, "\n", 1);
-		i ++;
-	}
+	write(1, "42:", 3);
+	ft_putnbr_base(42, "0123456789");
+	write(1, "\n2a:", 4);
+	ft_putnbr_base(42, "0123456789abcdef");
+	write(1, "\n-2a:", 5);
+	ft_putnbr_base(-2147483648, "0123456789abcdef");
+	write(1, "\n:", 2);
+	ft_putnbr_base(42, "");
+	write(1, "\n:", 2);
+	ft_putnbr_base(42, "0");
+	write(1, "\n:", 2);
+	ft_putnbr_base(42, "+-0123456789abcdef");
+	write(1, "\n:", 2);
+	ft_putnbr_base(42, "\t0123456789abcdef");
 }*/

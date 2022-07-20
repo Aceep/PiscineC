@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 19:54:56 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/20 13:01:22 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/20 15:16:03 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/20 17:03:01 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	*ft_range(int min, int max)
+int	ft_check_base(char *base)
 {
-	int	*tab;
 	int	i;
+	int	j;
 
-	if (min >= max)
-		return (NULL);
-	tab = (int *) malloc (sizeof (int) * (max - min));
 	i = 0;
-	while (min + i < max)
+	while (base[i])
 	{
-		tab[i] = min + i;
-		i++;
+		if (base[i] == '+' || base[i] == '-' || base[i] == 32
+			|| base[i] == '\f'
+			|| base[i] == '\n'
+			|| base[i] == '\r'
+			|| base[i] == '\v')
+			return (0);
+		j = i + 1;
+		while (base[j])
+		{
+			if (base[i] == base[j])
+				return (0);
+			j ++;
+		}
+		i ++;
 	}
-	return (tab);
+	if (i == 0 || i == 1)
+		return (0);
+	return (i);
 }
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	*range = ft_range(min, max);
-	if (!range)
-		return (-1);
-	return (max - min);
-}

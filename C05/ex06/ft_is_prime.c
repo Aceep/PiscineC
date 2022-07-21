@@ -13,7 +13,7 @@
 int	ft_is_prime(int nb)
 {
 	int	i;
-
+	
 	if (nb <= 1)
 		return (0);
 	if (nb == 2)
@@ -21,7 +21,7 @@ int	ft_is_prime(int nb)
 	if (nb % 2 == 0)
 		return (0);
 	i = 3;
-	while (i < nb / 2)
+	while (i < nb / i)
 	{
 		if (nb % i == 0)
 			return (0);
@@ -29,7 +29,7 @@ int	ft_is_prime(int nb)
 	}
 	return (1);
 }
-/*
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -46,4 +46,4 @@ int	main(int argc, char *argv[])
 		       argc --;
 		}
 	}
-}*/
+}

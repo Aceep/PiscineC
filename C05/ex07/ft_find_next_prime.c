@@ -21,7 +21,7 @@ int	ft_is_prime(int nb)
 		return (1);
 	if (nb % 2 == 0)
 		return (0);
-	while (i < nb / 2)
+	while (i < nb / i)
 	{	
 		if (nb % i == 0)
 			return (0);
@@ -39,7 +39,7 @@ int	ft_find_next_prime(int nb)
 		i ++;
 	return (nb + i);
 }
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -53,9 +53,9 @@ int	main(int argc, char *argv[])
 		{
 			nb = atoi(argv[argc - 1]);
 			argc --;
-			printf("%d est le prochain premier\n apres %d\n", ft_find_next_prime(nb), nb);
+			printf("%d est le prochain premier \n", ft_find_next_prime(nb));
 		}
 	}
 	return (0);
 }
-*/
+

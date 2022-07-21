@@ -9,11 +9,25 @@
 /*   Updated: 2022/07/21 09:59:53 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+int	ft_sqrt(int nb)
+{
+	int	sqrt;
+
+	sqrt = 1;
+	if (nb < 0)
+		return (0);
+	while (sqrt * sqrt < nb && sqrt < 46341)
+		sqrt ++;
+	if (sqrt * sqrt == nb)
+		return (sqrt);
+}
 
 int	ft_is_prime(int nb)
 {
 	int	i;
+	int	sqrt;
 
+	sqrt = ft_sqrt(nb);
 	i = 3;
 	if (nb <= 1)
 		return (0);
@@ -39,7 +53,6 @@ int	ft_find_next_prime(int nb)
 		i ++;
 	return (nb + i);
 }
-
 /*
 int	main(int argc, char *argv[])
 {

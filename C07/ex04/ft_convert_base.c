@@ -11,21 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-int    ft_space_count(char *str)
-{
-    int    i;
-
-    i = 0;
-    while (str[i] == ' '
-        || str[i] == '\t'
-        || str[i] == '\n'
-        || str[i] == '\v'
-        || str[i] == '\f'
-        || str[i] == '\r')
-        i++;
-    return (i);
-}
+#include <stdio.h>
 
 int    ft_check_base(char *base, unsigned int size)
 {
@@ -53,36 +39,49 @@ int    ft_check_base(char *base, unsigned int size)
     return (1);
 }
 
-int    ft_baseid(char c, char *base, unsigned int base_size)
+int    ft_space_count(char *str)
 {
-    unsigned int    id;
+    int    i;
 
-    id = 0;
-    while (id < base_size)
-    {
-        if (c == base[id])
-            return (id);
-        id++;
-    }
-    return (-1);
+    i = 0;
+    while (str[i] == ' '
+        || str[i] == '\t'
+        || str[i] == '\n'
+        || str[i] == '\v'
+        || str[i] == '\f'
+        || str[i] == '\r')
+        i++;
+    return (i);
 }
 
-int    ft_nb_in_dec_base(char *str, char *base, unsigned int base_size)
+int    ft_baseid(char c, char *base, unsigned int size)
+{
+    unsigned int    idx;
+
+    idx = 0;
+    while (idx < size)
+    {
+        if (c == base[idx])
+            return (idx);
+        idx++;
+    }
+    return (idx);
+}
+
+int    ft_nb_in_dec_base(char *s, char *base, unsigned int size)
 {
     unsigned int    i;
-    unsigned int    id;
+    unsigned int    idx;
     int                nb;
 
     nb = 0;
     i = 0;
-    while (id < base_size && str[i])
+    idx = ft_baseid(s[i], base, size);
+    while (idx < size && s[i])
     {
-        id = ft_baseid(str[i], base, base_size);
-            if (id == -1)
-                return (nb);
-        nb = nb * base_size + id;
+        nb = nb * size + idx;
         i++;
-        
+        idx = ft_baseid(s[i], base, size);
     }
     return (nb);
 }
@@ -90,26 +89,26 @@ int    ft_nb_in_dec_base(char *str, char *base, unsigned int base_size)
 int    ft_atoi_base(char *str, char *base)
 {
     unsigned int    i;
-    unsigned int    base_size;
+    unsigned int    b_size;
     int                sign;
     int                nb;
 
-    sign = 0;
+    sign = 1;
     nb = 0;
     i = ft_space_count(str);
-    base_size = 0;
-    while (base[base_size])
-        base_size;
-    if (!ft_check_base(base, base_size))
-        return (NULL);
+    b_size = 0;
+    while (base[b_size])
+        b_size++;
+    if (!ft_check_base(base, b_size))
+        return (0);
     while (str[i] == '-' || str[i] == '+')
     {    
         if (str[i] == '-')
-            sign ++;
+            sign = -1 * sign;
         i++;
     }
-    nb = ft_nb_in_dec_base(str + i, base, base_size);
-    if (sign % 2 != 0)
-        nb = -nb;
+    nb = ft_nb_in_dec_base(str + i, base, b_size);
+    nb = sign * nb;
+    printf("%d\n", nb);
     return (nb);
 }

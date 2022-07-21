@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 12:56:28 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/17 12:57:17 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/21 09:43:07 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	ft_recursive_factorial(int nb)
 	return (fact);
 }
 
-/*int	main(int argc, char *argv[])
+/*
+int	main(int argc, char *argv[])
 {
 	int	nb;
 

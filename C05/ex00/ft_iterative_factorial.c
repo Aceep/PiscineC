@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:19:01 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/18 12:50:53 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/21 09:36:29 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ int	ft_iterative_factorial(int nb)
 	}
 	return (nb);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
 
+/*
 int	main(int argc, char *argv[])
 {
 	int	nb;
@@ -40,10 +38,10 @@ int	main(int argc, char *argv[])
 	{
 		while ( argc > 1)
 		{
-			nb = atoi(argv[argc - 1]);
+			nb = (argv[argc - 1]);
 			nb = ft_iterative_factorial(nb);
 			argc --;
-			printf("%d\n", nb);
+			("%d\n", nb);
 		}
 	}
 	return (0);

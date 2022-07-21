@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:17:19 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/18 18:14:31 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/21 09:56:52 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ int	ft_sqrt(int nb)
 		return (0);
 }
 
-#include <stdlib.h>
-#include <stdio.h>
-
+/*
 int	main(int argc, char *argv[])
 {
 	int	nb;
@@ -36,10 +34,10 @@ int	main(int argc, char *argv[])
 	{
 		while (argc > 1)
 		{
-			nb = atoi(argv[argc - 1]);
-			printf("%d\n", ft_sqrt(nb));
+			nb = (argv[argc - 1]);
+			("%d\n", ft_sqrt(nb));
 			argc --;
 		}
 	}
 	return (0);
-}
+}*/

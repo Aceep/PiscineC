@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:55:41 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/18 13:56:10 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/21 09:59:53 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ int	ft_find_next_prime(int nb)
 	return (nb + i);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-
+/*
 int	main(int argc, char *argv[])
 {
 	int	nb;
@@ -51,11 +49,10 @@ int	main(int argc, char *argv[])
 	{
 		while (argc > 1)
 		{
-			nb = atoi(argv[argc - 1]);
+			nb = (argv[argc - 1]);
 			argc --;
-			printf("%d est le prochain premier \n", ft_find_next_prime(nb));
+			("%d est le prochain premier \n", ft_find_next_prime(nb));
 		}
 	}
 	return (0);
-}
-
+}*/

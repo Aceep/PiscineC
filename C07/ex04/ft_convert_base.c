@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+
+int     ft_strlen(char *nbr);
 
 int    ft_check_base(char *base, unsigned int size)
 {
@@ -39,21 +40,6 @@ int    ft_check_base(char *base, unsigned int size)
     return (1);
 }
 
-int    ft_space_count(char *str)
-{
-    int    i;
-
-    i = 0;
-    while (str[i] == ' '
-        || str[i] == '\t'
-        || str[i] == '\n'
-        || str[i] == '\v'
-        || str[i] == '\f'
-        || str[i] == '\r')
-        i++;
-    return (i);
-}
-
 int    ft_baseid(char c, char *base, unsigned int size)
 {
     unsigned int    idx;
@@ -76,39 +62,61 @@ int    ft_nb_in_dec_base(char *s, char *base, unsigned int size)
 
     nb = 0;
     i = 0;
-    idx = ft_baseid(s[i], base, size);
+    idx = ft_idxbase(s[i], base, size);
     while (idx < size && s[i])
     {
         nb = nb * size + idx;
         i++;
-        idx = ft_baseid(s[i], base, size);
+        idx = ft_idxbase(s[i], base, size);
     }
     return (nb);
 }
 
-int    ft_atoi_base(char *str, char *base)
+int    ft_atoi_base(char *str, char *base, int base_from_size)
 {
     unsigned int    i;
-    unsigned int    b_size;
     int                sign;
     int                nb;
 
     sign = 1;
     nb = 0;
-    i = ft_space_count(str);
-    b_size = 0;
-    while (base[b_size])
-        b_size++;
-    if (!ft_check_base(base, b_size))
-        return (0);
+    i = 0;
+    while (str[i] == ' '
+        || str[i] == '\t'
+        || str[i] == '\n'
+        || str[i] == '\v'
+        || str[i] == '\f'
+        || str[i] == '\r')
+        i++;
     while (str[i] == '-' || str[i] == '+')
     {    
         if (str[i] == '-')
             sign = -1 * sign;
         i++;
     }
-    nb = ft_nb_in_dec_base(str + i, base, b_size);
+    nb = ft_nb_in_dec_base(str + i, base, base_from_size);
     nb = sign * nb;
-    printf("%d\n", nb);
     return (nb);
+}
+
+char    *ft_itoa(int value_in_dec, char *base_to)
+{
+    char    *dest;
+    long int    n;
+    int     i;
+    
+    n = (long int) value_in_dec;
+	if (n < 0)
+	{
+		dest[0] = "-";
+		n = -n;
+	}
+    i = 0;
+    while (n)
+    {
+        dest[i ++] = base_to[n % ft_strlen[base_to]] 
+    }
+	
+	
+    return (dest);
 }

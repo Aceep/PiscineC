@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:55:41 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/21 09:59:53 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/21 15:37:08 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_sqrt(int nb)
 {
 	int	sqrt;
@@ -20,6 +21,7 @@ int	ft_sqrt(int nb)
 		sqrt ++;
 	if (sqrt * sqrt == nb)
 		return (sqrt);
+	retrun (sqrt);
 }
 
 int	ft_is_prime(int nb)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:12:42 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/21 09:58:36 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/21 15:36:14 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_sqrt(int nb)
 		sqrt ++;
 	if (sqrt * sqrt == nb)
 		return (sqrt);
+		return(sqrt);
 }
 
 int	ft_is_prime(int nb)

@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_parsing_dico.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 15:12:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/23 21:14:49 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/23 20:44:32 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/23 21:14:42 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int		main(int ac, char **av)
+int		am_i_a_number(char *str)
 {
-	if (ac == 1)
-	{
-		write(1, "Error\n", 6);
-		return (0);
-	}
-	if (!ft_check_argument(ac, av[1]))
-		return (0);
+		int		i;
 
-	ft_parsing_dico(av[1]);
-	return (0);	
+		i = 0;
+		while (str[i])
+		{
+			if (str[i] < '0' || str[i] > '9')
+				return (0);
+			i ++;
+		}
+		return (1);
+}
+
+void ft_parsing_dico(char *str)
+{
+	int		i;
+
+	i = am_i_a_number(str);
+	if (i == 0)
+		 report_error();
 }

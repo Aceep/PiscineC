@@ -6,7 +6,7 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/23 17:02:44 by alycgaut          #+#    #+#              #
-#    Updated: 2022/07/23 17:54:26 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/07/23 21:13:58 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,10 @@ SRCS	= 	main.c	\
 				ft_putstr.c 	\
 				ft_strcmp.c 	\
 				ft_strlen.c 	\
-
+				libft.c 	\
+				ft_parsing_dico.c	\
+			
+				
 OBJS = ${SRCS:.c=.o}
 
 NAME = rush-02

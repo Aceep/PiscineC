@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:30:18 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/23 19:35:22 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/23 20:42:09 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,9 @@ void	ft_show_tab(struct s_stock_str *par)
 		ft_putstr(par[i].copy);
 		i ++;
 	}
+}
+
+int main (int ac, char **av)
+{
+	ft_show_tab(ft_strs_to_tab(ac, av));
 }

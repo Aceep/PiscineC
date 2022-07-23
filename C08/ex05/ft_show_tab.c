@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:30:18 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/22 13:15:57 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/23 19:35:22 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,17 @@ void	ft_putstr(char *str)
 	write(1, "\n", 1);
 }
 
-void	ft_putchar(int size)
+void	ft_putchar(int nb)
 {
-	char	c;
+	write(1, &nb, 1);
+}
 
-	c = size + '0';
-	write(1, &c, 1);
-	write(1, "\n", 1);
+void	ft_putnbr(int size)
+{
+	if (size >= 10)
+		ft_putnbr(size / 10);
+	size = size % 10 + 48;
+	ft_putchar(size);
 }
 
 void	ft_show_tab(struct s_stock_str *par)
@@ -43,7 +47,8 @@ void	ft_show_tab(struct s_stock_str *par)
 	while (par[i].str != 0)
 	{
 		ft_putstr(par[i].str);
-		ft_putchar(par[i].size);
+		ft_putnbr(par[i].size);
+		write(1, "\n", 1);
 		ft_putstr(par[i].copy);
 		i ++;
 	}

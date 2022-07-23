@@ -1,1 +1,1 @@
-gcc -c *.c -o *.o 
+gcc -c *.c

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_argument.c                                :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 15:15:35 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/23 17:29:02 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/13 17:39:48 by ltonneli          #+#    #+#             */
+/*   Updated: 2022/07/23 16:23:48 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int 	ft_check_argument(int ac, char *str)
-{
-	long long int		i;
 
-	i = ft_atoi(str);
-	if (ac != 3 && ac != 2 || i < 0 || i > 4294967295)
-	{
-		write(1, "Error\n", 6);
-		return (0);
-	}
-	return (1);
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

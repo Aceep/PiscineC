@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_argument.c                                :+:      :+:    :+:   */
+/*   rush02.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 15:15:35 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/23 17:29:02 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/23 16:02:27 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/23 17:21:44 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush02.h"
+#ifndef RUSH02_H
+# define RUSH02_H
 
-int 	ft_check_argument(int ac, char *str)
-{
-	long long int		i;
+#include <unistd.h>
 
-	i = ft_atoi(str);
-	if (ac != 3 && ac != 2 || i < 0 || i > 4294967295)
-	{
-		write(1, "Error\n", 6);
-		return (0);
-	}
-	return (1);
-}
+long long int	ft_atoi(const char *str);
+int 	ft_check_argument(int ac, char *str);
+int		ft_strlen(char *str);
+void	ft_putstr(char *str);
+int		ft_strcmp(char *s1, char *s2);
+
+
+
+#endif

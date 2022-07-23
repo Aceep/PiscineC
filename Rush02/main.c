@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_argument.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 15:15:35 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/23 17:29:02 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/23 15:12:13 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/23 17:19:19 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int 	ft_check_argument(int ac, char *str)
+int		main(int ac, char **av)
 {
-	long long int		i;
-
-	i = ft_atoi(str);
-	if (ac != 3 && ac != 2 || i < 0 || i > 4294967295)
+	if (ac == 1)
 	{
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	return (1);
+	if (!ft_check_argument(ac, av[1]))
+		return (0);
+
+	return (0);	
 }

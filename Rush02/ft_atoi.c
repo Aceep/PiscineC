@@ -1,26 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_argument.c                                :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 15:15:35 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/23 17:29:02 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/23 15:38:40 by jdegluai          #+#    #+#             */
+/*   Updated: 2022/07/23 16:30:50 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int 	ft_check_argument(int ac, char *str)
+long long int	ft_atoi(const char *str)
 {
-	long long int		i;
+	int	i;
+	int	sign;
+	long long int	result;
 
-	i = ft_atoi(str);
-	if (ac != 3 && ac != 2 || i < 0 || i > 4294967295)
+	result = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		i++;
 	}
-	return (1);
+	if (str[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	else if (str[i] == '+')
+	{
+		i++;
+	}
+	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
+	{
+		result = result * 10 + str[i] - '0';
+		i++;
+	}
+	return (result * sign);
 }

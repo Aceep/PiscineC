@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 13:24:10 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/22 13:26:13 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/23 21:02:29 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/23 21:19:25 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "rush02.h"
 
-void	ft_putchar(char c)
+void	*report_error(void)
 {
-	write(1, &c, 1);
+	write(1, "Dict Error\n", 11);
+	return (NULL);
 }

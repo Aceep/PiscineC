@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 13:24:10 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/22 13:26:13 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/23 15:17:27 by ltonneli          #+#    #+#             */
+/*   Updated: 2022/07/23 16:26:55 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "rush02.h"
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

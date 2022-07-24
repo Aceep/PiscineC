@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 13:29:32 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/22 13:32:16 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/23 15:38:40 by jdegluai          #+#    #+#             */
+/*   Updated: 2022/07/23 16:30:50 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "rush02.h"
 
-void	ft_putstr(char *str)
+long long int	ft_atoi(const char *str)
 {
 	int	i;
-	
+	int	sign;
+	long long int	result;
+
+	result = 0;
+	sign = 1;
 	i = 0;
-	while (str[i])
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	{
-		write(1, &str[i], 1);
-		i ++;
+		i++;
 	}
+	if (str[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	else if (str[i] == '+')
+	{
+		i++;
+	}
+	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
+	{
+		result = result * 10 + str[i] - '0';
+		i++;
+	}
+	return (result * sign);
 }

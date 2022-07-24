@@ -11,7 +11,7 @@ void	inter(char *av1, char *av2)
 			while(j > 0)
 			{
 				if (av1[i] == av1[j])
-						return
+						returnU
 			}
 	}
 }

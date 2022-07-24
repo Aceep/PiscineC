@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 13:24:10 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/22 13:26:13 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/13 17:39:48 by ltonneli          #+#    #+#             */
+/*   Updated: 2022/07/23 16:23:48 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "rush02.h"
 
-void	ft_putchar(char c)
+
+int	strcmp_nbr(char *nbr1, char *nbr2)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	if (*nbr2 == '0' && *(nbr2 + 1) != ':' && *(nbr2 + 1) != ' ')
+	{
+		while (*nbr2 == '0')
+			nbr2++;
+	}
+	while (nbr1[i] && nbr2[i] != ' ' && nbr2[i] != ':' && nbr1[i] == nbr2[i])
+		i++;
+	if (!nbr1[i] && (nbr2[i] == ' ' || nbr2[i] == ':'))
+		return (1);
+	return (0);
 }

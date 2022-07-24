@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 17:02:46 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/24 21:52:53 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:53:59 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	display_below_100(int nb, t_number *tab)
 		c = tab[nb].letter;
 		ft_putstr(c);
 	}
-		//printf("%s", tab[nb].letter);
 }
 
 void	get_hundread(int nb, t_number *tab)

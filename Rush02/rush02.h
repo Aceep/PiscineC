@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 16:02:27 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/24 21:29:15 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:40:48 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_number
 long long int	ft_atoi(const char *str);
 int				ft_check_argument(int ac, char *str);
 int				ft_strlen(char *str);
-void			ft_putstr(t_number *str);
+void			ft_putstr(char *tab);
 int				ft_strcmp(char *s1, char *s2);
 void			*report_error(void);
 int				ft_dico(char *dico, char *str);

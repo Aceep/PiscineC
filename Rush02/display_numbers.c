@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 17:02:46 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/24 20:51:54 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:52:53 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,29 @@
 
 void	display_below_100(int nb, t_number *tab)
 {
+	char	*c;
+	
 	if (nb > 20)
 		display_up_20(nb, tab);
 	else
-		printf("%s", tab[nb].letter);
+	{
+		c = tab[nb].letter;
+		ft_putstr(c);
+	}
+		//printf("%s", tab[nb].letter);
 }
 
 void	get_hundread(int nb, t_number *tab)
 {
+	char	*c;
+
 	nb = nb / 100;
 	if (nb != '0')
-		printf("%s hundred ", tab[nb].letter);
+	{
+		c = tab[nb].letter;
+		ft_putstr(c);
+		ft_putstr(" hundred ");
+	}
 }
 
 int	display_up_20(int nb, t_number *tab)
@@ -32,7 +44,8 @@ int	display_up_20(int nb, t_number *tab)
 	int		i;
 	char	d[3];
 	char	u[2];
-
+	char	*c ;
+	c ="5";
 	if (nb >= 100)
 		get_hundread(nb, tab);
 	nb = nb % 100;
@@ -47,9 +60,15 @@ int	display_up_20(int nb, t_number *tab)
 	while (!(ft_strcmp(d, tab[i].number) == 0))
 		i++;
 	if (d[0] != '0')
-		printf("%s ", tab[i].letter);
+	{
+		c = tab[i].letter;
+		ft_putstr(c);
+	}
 	i = ft_atoi(u);
 	if (u[0] != 48)
-		printf("%s", tab[i].letter);
+	{
+		c = tab[i].letter;
+		ft_putstr(c);
+	}
 	return (0);
 }

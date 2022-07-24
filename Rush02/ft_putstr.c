@@ -6,20 +6,21 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 15:17:27 by ltonneli          #+#    #+#             */
-/*   Updated: 2022/07/24 16:51:21 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:47:20 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-void	ft_putstr(t_number *tab)
+void	ft_putstr(char *tab)
 {
 	int	i;
 
 	i = 0;
-	while (tab[i].letter)
+	while (tab[i])
 	{
-		write(1, &tab[i].letter, 1);
+		write(1, &tab[i], 1);
 		i++;
 	}
+	write(1, " ", 1);
 }

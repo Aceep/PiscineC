@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_compare_to_find.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 15:23:44 by jdegluai          #+#    #+#             */
-/*   Updated: 2022/07/24 17:23:49 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/24 17:27:00 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/24 17:53:38 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int	ft_strlen(char *str)
+char	*ft_compare_to_find(char *str, t_number *tab)
 {
 	int	i;
+	int	j;
+	int	ret;
 
+	ret = 0;
+	j = ft_strlen(str);
 	i = 0;
-	while (str[i])
+	while (ret != 1)
 	{
-		i++;
+		ft_strstr(str, tab[i].number);
+		i ++;
 	}
-	return (i);
+	printf("%d", i);
+	return (str);
 }

@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 15:23:44 by jdegluai          #+#    #+#             */
-/*   Updated: 2022/07/24 17:23:49 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/13 11:38:14 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/24 14:07:52 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush02.h"
+#include <string.h>
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+int	ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	j;
 
+	j = 0;
 	i = 0;
+	if (*to_find == '\0')
+		return (0);
 	while (str[i])
 	{
-		i++;
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+			j ++;
+		if (to_find[j] == '\0' )
+			return (1);
+		j = 0;
+		i ++;
 	}
-	return (i);
+	return (0);
 }

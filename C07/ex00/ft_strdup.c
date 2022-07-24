@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 20:33:58 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/19 18:12:06 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 16:38:42 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+
 #include <stdlib.h>
 #include <unistd.h>
 

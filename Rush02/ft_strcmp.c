@@ -6,12 +6,18 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:39:48 by ltonneli          #+#    #+#             */
-/*   Updated: 2022/07/23 16:23:48 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:04:10 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
+/*int	ft_strcmp(char *s1, char *s2)
+{
+	if (s1 != s2)
+		return (0);
+	return (1);
+}*/
 
 int	ft_strcmp(char *s1, char *s2)
 {

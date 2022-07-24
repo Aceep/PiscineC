@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 17:02:46 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/24 21:53:59 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 22:07:43 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	display_below_100(int nb, t_number *tab)
 {
 	char	*c;
-	
+
 	if (nb > 20)
 		display_up_20(nb, tab);
 	else
@@ -38,13 +38,26 @@ void	get_hundread(int nb, t_number *tab)
 	}
 }
 
+void	put_unity(int i, t_number *tab, char *c)
+{
+	c = tab[i].letter;
+	ft_putstr(c);
+}
+
+void	put_tens(int i, t_number *tab, char *c)
+{
+	c = tab[i].letter;
+	ft_putstr(c);
+}
+
 int	display_up_20(int nb, t_number *tab)
 {
 	int		i;
 	char	d[3];
 	char	u[2];
 	char	*c ;
-	c ="5";
+
+	c = NULL;
 	if (nb >= 100)
 		get_hundread(nb, tab);
 	nb = nb % 100;
@@ -59,15 +72,9 @@ int	display_up_20(int nb, t_number *tab)
 	while (!(ft_strcmp(d, tab[i].number) == 0))
 		i++;
 	if (d[0] != '0')
-	{
-		c = tab[i].letter;
-		ft_putstr(c);
-	}
+		put_tens(i, tab, c);
 	i = ft_atoi(u);
 	if (u[0] != 48)
-	{
-		c = tab[i].letter;
-		ft_putstr(c);
-	}
+		put_unity(i, tab, c);
 	return (0);
 }

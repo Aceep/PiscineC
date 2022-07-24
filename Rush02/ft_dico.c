@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 20:44:32 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/24 20:06:23 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:28:53 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ int	am_i_a_number(char *str)
 		i ++;
 	}
 	return (1);
+}
+
+t_number	*dict(t_number *tab, int idico, char *buf_num, char *buf_text)
+{
+	tab[idico].number = ft_strdup(buf_num);
+	tab[idico].letter = ft_strdup(buf_text);
+	return (tab);
 }
 
 t_number	*ft_tab(int fd, t_number *tab)
@@ -53,11 +60,7 @@ t_number	*ft_tab(int fd, t_number *tab)
 		}
 		buf_text[i] = '\0';
 		if (buffer[0] == '\n')
-		{
-			tab[idico].number = ft_strdup(buf_num);
-			tab[idico].letter = ft_strdup(buf_text);
-			idico ++;
-		}
+			dict(tab, idico ++, buf_num, buf_text);
 	}
 	return (tab);
 }
@@ -65,7 +68,6 @@ t_number	*ft_tab(int fd, t_number *tab)
 t_number	*ft_init_dico(char *dico_file, t_number *tab)
 {
 	int		fd;
-
 
 	tab = malloc((sizeof(t_number) * 41));
 	fd = open(dico_file, O_RDONLY);
@@ -95,15 +97,6 @@ int	ft_dico(char *dico, char *str)
 	}
 	tab = ft_init_dico(dico, tab);
 	nb = ft_atoi(str);
-	//printf("%d", nb);
-	if (nb >= 1000)
-	{
-		display_below_100(nb/1000, tab);
-		printf(" thousand ");
-	}
-	nb = nb % 1000;
-	if (nb <= 999 && nb != 0)
-		display_below_100(nb, tab);
-	printf("\n");
+	ft_compare_to_find(nb, tab);
 	return (0);
 }

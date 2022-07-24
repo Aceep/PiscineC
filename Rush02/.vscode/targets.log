@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 24 20:45:25 2022
+# Make data base, printed on Sun Jul 24 20:44:16 2022
 
 # Variables
 
@@ -37,21 +35,25 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /mnt/nfs/homes/alycgaut/piscine/piscingithub
+CURDIR := /mnt/nfs/homes/alycgaut/piscine/piscingithub/Rush02
 # makefile
 SHELL = /bin/sh
+# makefile (from 'Makefile', line 31)
+RM = rm -f 
 # environment
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/code
+# makefile (from 'Makefile', line 33)
+CFLAGS = -Wall -Wextra -Werror
 # environment
 JOURNAL_STREAM = 9:624150
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# makefile
-MAKEFILE_LIST := 
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
 # environment
@@ -66,12 +68,14 @@ XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/alycgaut/.loca
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/102914/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 26)
+OBJS = ${SRCS:.c=.o}
 # environment
 MANAGERPID = 140717
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/102914/vscode-ipc-ba69adbc-dee6-4330-8215-ca1db55ce131.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/102914/vscode-ipc-f1cbe851-da47-442b-a901-7045c9a7a100.sock
 # environment
-VSCODE_CWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
+VSCODE_CWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub/Rush02
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session5
 # environment
@@ -115,7 +119,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
+PWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub/Rush02
 # default
 .LOADED := 
 # environment
@@ -154,14 +158,18 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
+# makefile (from 'Makefile', line 13)
+SRCS = main.c ft_atoi.c ft_check_argument.c ft_putstr.c ft_strcmp.c ft_strlen.c libft.c ft_dico.c ft_compare_to_find.c ft_strstr.c ft_strdup.c display_numbers.c 
 # environment
 SHLVL = 2
+# makefile (from 'Makefile', line 30)
+CC = cc
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = alycgaut
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := rush-02
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -173,7 +181,7 @@ LESS = -R
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub/Rush02
+OLDPWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
 # default
 .VARIABLES := 
 # automatic
@@ -222,6 +230,8 @@ CHROME_DESKTOP = code-url-handler.desktop
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 28)
+NAME = rush-02
 # default
 .RECIPEPREFIX := 
 # environment
@@ -231,9 +241,9 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/102914/docker.sock
 # environment
-VSCODE_PID = 142414
+VSCODE_PID = 141779
 # variable set hash-table stats:
-# Load=110/1024=11%, Rehash=0, Collisions=10/132=8%
+# Load=116/1024=11%, Rehash=0, Collisions=18/148=12%
 
 # Pattern-specific Variable Values
 
@@ -241,9 +251,9 @@ VSCODE_PID = 142414
 
 # Directories
 
-# . (device 54, inode 253888578): 22 files, no impossibilities.
+# . (device 54, inode 186123837): 19 files, no impossibilities.
 
-# 22 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -252,25 +262,91 @@ VSCODE_PID = 142414
 # Files
 
 # Not a target:
+ft_dico.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_strlen.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 all:
 #  Command line target.
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
 #  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+ 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  recipe to execute (from 'Makefile', line 39):
+		${NAME}
+		
+
+# Not a target:
+libft.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_putstr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-07-24 20:04:21.613730499
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 
 # Not a target:
-makefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+ft_check_argument.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fclean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 42):
+			${RM} ${NAME} ${OBJS}
+
+rush-02: main.o ft_atoi.o ft_check_argument.o ft_putstr.o ft_strcmp.o ft_strlen.o libft.o ft_dico.o ft_compare_to_find.o ft_strstr.o ft_strdup.o display_numbers.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 36):
+		${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 # Not a target:
 .DEFAULT:
@@ -279,27 +355,61 @@ makefile:
 #  File has not been updated.
 
 # Not a target:
-GNUmakefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
- 
+ft_strcmp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_strdup.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_strstr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_compare_to_find.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_atoi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+display_numbers.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/42=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 248 B / avg = 8 B
-# current buf: size = 8162 B / used = 248 B / count = 30 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 433 B / avg = 11 B
+# current buf: size = 8162 B / used = 433 B / count = 38 / avg = 11 B
 
-# strcache performance: lookups = 33 / hit rate = 9%
+# strcache performance: lookups = 47 / hit rate = 19%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=1/33=3%
-# Finished Make data base on Sun Jul 24 20:45:25 2022
+# Load=38/8192=0%, Rehash=0, Collisions=1/47=2%
+# Finished Make data base on Sun Jul 24 20:44:16 2022
 
  

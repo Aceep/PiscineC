@@ -6,26 +6,35 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 17:27:00 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/24 17:53:38 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:29:05 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-char	*ft_compare_to_find(char *str, t_number *tab)
+void	ft_compare_to_find(int nb, t_number *tab)
 {
-	int	i;
-	int	j;
-	int	ret;
-
-	ret = 0;
-	j = ft_strlen(str);
-	i = 0;
-	while (ret != 1)
+	if (nb == 0)
+		printf("%s", tab[0].letter);
+	if (nb >= 1000000000)
 	{
-		ft_strstr(str, tab[i].number);
-		i ++;
+		display_below_100(nb / 1000000000, tab);
+		printf("  billion  ");
 	}
-	printf("%d", i);
-	return (str);
+	nb = nb % 1000000000;
+	if (nb >= 1000000)
+	{
+		display_below_100(nb / 1000000, tab);
+		printf("  million  ");
+	}
+	nb = nb % 1000000;
+	if (nb >= 1000)
+	{
+		display_below_100(nb / 1000, tab);
+		printf(" thousand ");
+	}
+	nb = nb % 1000;
+	if (nb <= 999 && nb != 0)
+		display_below_100(nb, tab);
+	printf("\n");
 }

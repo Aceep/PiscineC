@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 16:02:27 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/24 19:32:29 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:29:15 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int				ft_strlen(char *str);
 void			ft_putstr(t_number *str);
 int				ft_strcmp(char *s1, char *s2);
 void			*report_error(void);
-int			ft_dico(char *dico, char *str);
-char			*ft_compare_to_find(char *str, t_number *tab);
+int				ft_dico(char *dico, char *str);
+void			ft_compare_to_find(int nb, t_number *tab);
 int				ft_strstr(char *str, char *to_find);
 char			*ft_strdup(char *src);
 void			display_below_100(int nb, t_number *tab);
-int			display_up_20(int nb, t_number *tab);
+int				display_up_20(int nb, t_number *tab);
 
 #endif

@@ -5,36 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/25 10:32:55 by alycgaut          #+#    #+#              #
-#    Updated: 2022/07/25 10:57:22 by alycgaut         ###   ########.fr        #
+#    Created: 2022/07/25 11:23:56 by alycgaut          #+#    #+#              #
+#    Updated: 2022/07/25 12:21:32 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	srcs/ft_putstr.c		\
-		srcs/ft_putchar.c		\
-		srcs/ft_strcmp.c		\
-		srcs/ft_strlen.c		\
-		srcs/ft_swap.c		\
+SRCS = main.c \
 
 OBJS = ${SRCS:.c=.o}
 
-NAME = libft.a
+HEADERS = bsq.h 
 
-HEADERS = includes/
+NAME = bsq
 
-CC = gcc
+CC = gcc 
 
 CFLAGS = -Wall -Wextra -Werror
 
+RM = rm -f 
+
+all :		${NAME}
+
 ${NAME} :	${OBJS}
-			ar rc ${NAME} ${OBJS}
+			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
-all :	${NAME}
+clean :
+			${RM} ${OBJS}
 
-clean :	
-			rm -f ${OBJS}
+fclean : 	clean
+			${RM} ${NAME}
 
-fclean :	clean
-			rm -f ${NAME}
-
-re :	fclean all
+re : 		fclean all

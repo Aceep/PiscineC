@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 13:29:32 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/22 13:32:16 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/25 10:57:46 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 	{

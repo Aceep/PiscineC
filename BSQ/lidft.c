@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   lidft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 13:26:36 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/25 10:56:14 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/25 12:15:35 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/25 12:22:18 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int		tmp;
+#include "bsq.h"
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i ++;
+	return (i);
 }

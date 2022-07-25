@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:34:37 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/25 13:05:57 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:24:04 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ typedef struct s_map_data
 int		ft_strlen(char *str);
 void	ft_putchar(char c);
 void	ft_print_map(t_map *map, int max);
+void 	*ft_solve(t_mapd *map, int *max);
 
 #endif

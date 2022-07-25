@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:16:03 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/20 17:03:01 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:22:33 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ int    ft_nb_in_dec_base(char *s, char *base, unsigned int size)
 
     nb = 0;
     i = 0;
-    idx = ft_idxbase(s[i], base, size);
+    idx = ft_baseid(s[i], base, size);
     while (idx < size && s[i])
     {
         nb = nb * size + idx;
         i++;
-        idx = ft_idxbase(s[i], base, size);
+        idx = ft_baseid(s[i], base, size);
     }
     return (nb);
 }
@@ -98,6 +98,8 @@ int    ft_atoi_base(char *str, char *base, int base_from_size)
     nb = sign * nb;
     return (nb);
 }
+#include <stdio.h>
+void	ft_putnbr_base(long long int nbr, char *base);
 
 char    *ft_itoa(int value_in_dec, char *base_to)
 {
@@ -108,15 +110,11 @@ char    *ft_itoa(int value_in_dec, char *base_to)
     n = (long int) value_in_dec;
 	if (n < 0)
 	{
-		dest[0] = "-";
+		dest[0] = '-';
 		n = -n;
 	}
-    i = 0;
-    while (n)
-    {
-        dest[i ++] = base_to[n % ft_strlen[base_to]] 
-    }
+    ft_putnbr_base(n, base_to);
 	
-	
+    printf("%s", dest);
     return (dest);
 }

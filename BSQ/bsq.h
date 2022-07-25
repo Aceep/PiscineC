@@ -5,33 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 11:34:37 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/25 18:24:04 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/25 18:04:25 by maaliber          #+#    #+#             */
+/*   Updated: 2022/07/25 20:54:26 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BSQ_H
 # define BSQ_H
-
-# include <unistd.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include <stdlib.h>
-
 # include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 typedef struct s_map_data
 {
 	int		width;
-	int		lenght;
+	int		length;
 	char	*sym;
 	int		**map;
 }t_mapd;
-
+int		ft_strcpy(char *dest, char *src, int size);
 int		ft_strlen(char *str);
+char	*ft_mstrcat(char *src1, char *src2, unsigned int size);
+char	*ft_read_file(int fd);
+int		ft_atoil(char *str, int *nb);
+int		ft_first_line(t_mapd *md, char *map_data);
+int		ft_width(char *map_data);
+int		ft_is_valid(char *sym, char c);
+int		ft_map_lines(t_mapd *md, char *map_data);
+int		**ft_init_map(int length, int width);
+void	ft_fill_map(t_mapd *md, char *map_data);
+t_mapd	*ft_init_map_descriptor(void);
+t_mapd	*ft_gen_map(char *arg);
+void	ft_print_map(t_mapd *md);
 void	ft_putchar(char c);
-void	ft_print_map(t_map *map, int max);
-void 	*ft_solve(t_mapd *map, int *max);
+int		ft_solve(t_mapd *map, int *max);
+void	ft_fill_x(t_mapd *md, int *max);
 
 #endif

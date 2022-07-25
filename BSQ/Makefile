@@ -6,11 +6,20 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/25 11:23:56 by alycgaut          #+#    #+#              #
-#    Updated: 2022/07/25 12:21:32 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/07/25 20:34:52 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c \
+SRCS =	bsq.c \
+		ft_check_line.c 	\
+		ft_fill_map.c 	\
+		ft_gen_map.c 	\
+		ft_mstrcat.c 	\
+		ft_open_file.c 	\
+		ft_print_map.c 	\
+		ft_putchar.c 	\
+		ft_solve.c 	\
+		ft_strcpy.c 	\
 
 OBJS = ${SRCS:.c=.o}
 

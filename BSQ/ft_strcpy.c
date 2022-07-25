@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 11:34:20 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/25 18:27:55 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/10 18:25:49 by maaliber          #+#    #+#             */
+/*   Updated: 2022/07/25 15:56:02 by maaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int	main(int ac, char **av)
+int	ft_strcpy(char *dest, char *src, int size)
 {
-	
+	int	i;
+
+	i = 0;
+	while (src[i] && i < size)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	if (i != size)
+		return (0);
+	return (1);
 }

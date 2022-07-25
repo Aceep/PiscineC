@@ -1,50 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_map.c                                     :+:      :+:    :+:   */
+/*   ft_fill_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 18:34:45 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/25 20:42:38 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/07/25 17:26:19 by maaliber          #+#    #+#             */
+/*   Updated: 2022/07/25 20:50:52 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-void	ft_fill_x(t_mapd *md, int *max)
+int	**ft_init_map(int length, int width)
 {
-	int	x;
-	int	y;
+	int	**map;
+	int	i;
 
-	x = max[0];
-	while (x < max[0] + max[2])
+	i = 0;
+	map = (int **)malloc(sizeof(int *) * length + 1);
+	while (i < length)
 	{
-		y = max[1];
-		while (y < max[1] + max[2])
-		{
-			md->map[x][y] = 2;
-			y ++;
-		}
-		x ++;
+		map[i++] = (int *)malloc(sizeof(int) * width);
 	}
+	return (map);
 }
 
-void	ft_print_map(t_mapd *md)
+void	ft_fill_map(t_mapd *md, char *map_data)
 {
+	int	i;
 	int	x;
 	int	y;
 
+	i = 0;
+	while (map_data[i] != '\n')
+		i++;
 	x = 0;
+	md->map = ft_init_map(md->length, md->width);
 	while (x < md->length)
 	{
+		i++;
 		y = 0;
 		while (y < md->width)
 		{
-			ft_putchar(md->sym[md->map[x][y]]);
+			if (map_data[i] == md->sym[0])
+				md->map[x][y] = 0;
+			if (map_data[i] == md->sym[1])
+				md->map[x][y] = 1;
+			i++;
 			y++;
 		}
-		ft_putchar('\n');
 		x++;
 	}
+	md->map[x] = NULL;
 }

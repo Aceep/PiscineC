@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 
 int    is_incharset(char c, char *charset)
 {
@@ -79,7 +78,7 @@ char    **ft_split(char *str, char *charset)
     tab[idx_l] = 0;
     return (tab);
 }
-
+/*
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -159,4 +158,4 @@ int		main(void)
 	printf("OK\n");
 	tab = ft_split("         ", "       ");
 	printf("OK\n");
-}
+}*/

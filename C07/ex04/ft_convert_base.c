@@ -3,118 +3,118 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:16:03 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/25 19:22:33 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/27 00:56:09 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <unistd.h>
 
 int     ft_strlen(char *nbr);
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
+void	ft_putnbr_base(long long int nbr, char *base, char *fnbr);
+int	l_nbr(int nbr, char *base, int lenght);
 
-int    ft_check_base(char *base, unsigned int size)
+int    ft_check_base(char *base)
 {
     unsigned int    i;
     unsigned int    j;
 
-    i = 0;
-    if (size <= 1)
-        return (0);
-    while (i < size)
-    {
-        if (base[i] == '-' || base[i] == '+')
-            return (0);
-        if (base[i] <= 32 || base[i] > 126)
-            return (0);
-        j = i + 1;
-        while (j < size)
-        {
-            if (base[i] == base[j])
-                return (0);
-            j++;
-        }
-        i++;
-    }
-    return (1);
-}
-
-int    ft_baseid(char c, char *base, unsigned int size)
-{
-    unsigned int    idx;
-
-    idx = 0;
-    while (idx < size)
-    {
-        if (c == base[idx])
-            return (idx);
-        idx++;
-    }
-    return (idx);
-}
-
-int    ft_nb_in_dec_base(char *s, char *base, unsigned int size)
-{
-    unsigned int    i;
-    unsigned int    idx;
-    int                nb;
-
-    nb = 0;
-    i = 0;
-    idx = ft_baseid(s[i], base, size);
-    while (idx < size && s[i])
-    {
-        nb = nb * size + idx;
-        i++;
-        idx = ft_baseid(s[i], base, size);
-    }
-    return (nb);
-}
-
-int    ft_atoi_base(char *str, char *base, int base_from_size)
-{
-    unsigned int    i;
-    int                sign;
-    int                nb;
-
-    sign = 1;
-    nb = 0;
-    i = 0;
-    while (str[i] == ' '
-        || str[i] == '\t'
-        || str[i] == '\n'
-        || str[i] == '\v'
-        || str[i] == '\f'
-        || str[i] == '\r')
-        i++;
-    while (str[i] == '-' || str[i] == '+')
-    {    
-        if (str[i] == '-')
-            sign = -1 * sign;
-        i++;
-    }
-    nb = ft_nb_in_dec_base(str + i, base, base_from_size);
-    nb = sign * nb;
-    return (nb);
-}
-#include <stdio.h>
-void	ft_putnbr_base(long long int nbr, char *base);
-
-char    *ft_itoa(int value_in_dec, char *base_to)
-{
-    char    *dest;
-    long int    n;
-    int     i;
-    
-    n = (long int) value_in_dec;
-	if (n < 0)
+   i = 0;
+	if (base[0] == '\0' || base[1] == '\0')
+		return (0);
+	while (base[i] != '\0')
 	{
-		dest[0] = '-';
-		n = -n;
+		if (base[i] <= 32 || base[i] == 127 || base[i] == '+' || base[i] == '-')
+			return (0);
+		j = i + 1;
+		while (base[j] != '\0')
+		{
+			if (base[i] == base[j])
+				return (0);
+			j++;
+		}
+		i++;
 	}
-    ft_putnbr_base(n, base_to);
-	
-    printf("%s", dest);
-    return (dest);
+	return (i);
+}
+
+int	current_digit(char i, char *base)
+{
+	int	nb;
+
+	nb = 0;
+	while (base[nb] != '\0')
+	{
+		if (i == base[nb])
+			return (nb);
+		nb++;
+	}
+	return (-1);
+}
+
+int	shift_to_nbr(char *str, int *ptr_i)
+{
+	int	sign;
+	int	i;
+
+	i = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	sign = 1;
+	while (str[i] && (str[i] == '+' || str[i] == '-'))
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	*ptr_i = i;
+	return (sign);
+}
+
+int	ft_atoi_base(char *str, char *base)
+{
+	int		i;
+	int		sign;
+	int		nb;
+	int		curr;
+	int		power;
+
+	nb = 0;
+	i = 0;
+	power = ft_check_base(base);
+	if (power >= 2)
+	{
+		sign = shift_to_nbr(str, &i);
+		curr = current_digit(str[i], base);
+		while (curr != -1)
+		{
+			nb = (nb * power) + curr;
+			i++;
+			curr = current_digit(str[i], base);
+		}
+		return (nb *= sign);
+	}
+	return (0);
+}
+
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
+{
+	int		intnbr;
+	int		lenght_nbrf;
+	char	*finalnbr;
+
+	if (ft_check_base(base_to) == 0 || ft_check_base(base_from) == 0)
+		return (0);
+	intnbr = ft_atoi_base(nbr, base_from);
+	lenght_nbrf = l_nbr(intnbr, base_to, 0);
+	finalnbr = (char *)malloc(sizeof(char) * (lenght_nbrf + 1));
+	if (!finalnbr)
+		return (0);
+	ft_putnbr_base(intnbr, base_to, finalnbr);
+	finalnbr[lenght_nbrf] = '\0';
+	return (finalnbr);
 }

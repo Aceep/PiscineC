@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smilosav <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:09:58 by smilosav          #+#    #+#             */
-/*   Updated: 2022/07/19 13:08:51 by smilosav         ###   ########.fr       */
+/*   Updated: 2022/07/27 00:48:57 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 
 void	ft_putnbr_base(int nbr, char *base, char *finalnbr);
 int		lenght_nbr(int nbr, char *base, int lenght);

@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:33:18 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/25 19:22:30 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/27 00:54:52 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-char    *ft_itoa(int value_in_dec, char *base_to);
+#include <unistd.h>
+
 
 int    ft_check_base(char *base, unsigned int size);
 int    ft_atoi_base(char *str, char *base, int base_from_size);
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
 
 int     ft_strlen(char *nbr)
 {
@@ -26,44 +28,54 @@ int     ft_strlen(char *nbr)
         return (i);
 }
 
-void  *ft_convert_base(char *nbr, char *base_from, char *base_to)
+int	l_nbr(int nbr, char *base, int lenght)
 {
-    unsigned int    base_from_size;
-    unsigned int    base_to_size;
-    int     value_in_dec;
+	int				base_lenght;
+	unsigned int	nb;
 
-    base_from_size = ft_strlen(base_from);
-    printf("%d\n", base_from_size);
-    base_to_size = ft_strlen(base_to); printf("%d\n", base_to_size);
-    if (!ft_check_base(base_from,  base_from_size) || !ft_check_base(base_to, base_to_size))
-        return (0);
-    
-   value_in_dec = ft_atoi_base(nbr, base_from, base_from_size);
-   printf("%d\n", value_in_dec);
-    nbr = ft_itoa(value_in_dec, base_to);
+	base_lenght = ft_strlen(base);
+	if (nbr < 0)
+	{
+		nb = nbr * -1;
+		lenght++;
+	}
+	else
+		nb = nbr;
+	while (nb >= (unsigned)base_lenght)
+	{
+		nb /= base_lenght;
+		lenght++;
+	}
+	lenght++;
+	return (lenght);
 }
 
-void	ft_putnbr_base(long long int nbr, char *base)
+void	ft_putnbr_base(long long int nbr, char *base, char *fnbr)
 {
 	long long int		nb;
-	int					nb_base;
+	int					l_base;
+	int	l_nbrf;
+	int	i;
 
-	nb = (long long)nbr;
+	l_base = ft_strlen(base);
+	l_nbrf = l_nbr(nbr, base, 0);
+	nb = nbr;
+	i = 0;
 	if (nb < 0)
 	{
 		write(1, "-", 1);
 		nb = -nb;
+		i = 1;
 	}
-	nb_base = ft_count_base(base);
-	if (nb_base != 0)
-		ft_translate(nb, base, nb_base);
-}
-
-void	ft_translate(long long int nb, char *base, int nb_base)
-{
-	if (nb >= nb_base)
-		ft_translate(nb / nb_base, base, nb_base);
-	write(1, &base[nb % nb_base], 1);
+	l_nbrf --;
+	while (nb >= l_base)
+	{
+		fnbr[l_nbrf] = base[nb % l_base];
+		nb /= l_base;
+		l_nbrf--;
+	}
+	if (nb < l_base)
+		fnbr[i] = base[nb];
 }
 
 int main()
@@ -71,5 +83,5 @@ int main()
     char *nbr;
 
     nbr = "2a";
-    printf("%p\n", ft_convert_base(nbr, "0123456789abcdef", "0123456789"));
+    printf("%s\n", ft_convert_base(nbr, "0123456789abcdef", "0123456789"));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_solve.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:29:38 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/25 20:54:52 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/26 21:43:47 by maaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ int	sum(int x, int y, int size, t_mapd *map)
 	return (sum);
 }
 
+void	ft_free(t_mapd *map)
+{
+	int	x;
+
+	x = -1;
+	while (++ x < map->length)
+		free(map->map[x]);
+	free(map);
+}
+
 int	ft_solve(t_mapd *map, int *max)
 {
 	int	x;
@@ -42,7 +52,7 @@ int	ft_solve(t_mapd *map, int *max)
 		y = -1;
 		while (++y < map->width)
 		{
-			while (x + ++s < map->length && y + s <= map->width
+			while (x + ++s <= map->length && y + s <= map->width
 				&& (sum(x, y, s, map) == 0))
 			{
 				if (s > max[2])
@@ -55,5 +65,5 @@ int	ft_solve(t_mapd *map, int *max)
 			s = 0;
 		}
 	}
-	return (ft_fill_x(map, max), ft_print_map(map), 0);
+	return (ft_fill_x(map, max), ft_print_map(map), ft_free(map), 0);
 }

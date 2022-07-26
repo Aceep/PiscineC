@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 25 12:21:34 2022
+# Make data base, printed on Tue Jul 26 12:59:21 2022
 
 # Variables
 
@@ -45,9 +45,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-_ = /usr/bin/code
-# environment
-JOURNAL_STREAM = 9:1317974
+JOURNAL_STREAM = 9:1288174
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -63,19 +61,21 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/alycgaut/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/102914/bus
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/102914/bus,guid=bce7d38c7db226fc6cc32a1b62dfacc7
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 245607
+_ = /usr/bin/code
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/102914/vscode-ipc-b05c099a-1634-4429-86e5-69208e7ef999.sock
+MANAGERPID = 282425
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/102914/vscode-ipc-ece43866-435b-4a17-979e-6e174fd3de23.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session3
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session9
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_102914_E6hggW
+KRB5CCNAME = FILE:/tmp/krb5cc_102914_prfZFA
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -85,7 +85,7 @@ GPG_AGENT_INFO = /run/user/102914/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e3r10p18.clusters.42paris.fr:@/tmp/.ICE-unix/246108,unix/e3r10p18.clusters.42paris.fr:/tmp/.ICE-unix/246108
+SESSION_MANAGER = local/e3r12p23.clusters.42paris.fr:@/tmp/.ICE-unix/282940,unix/e3r12p23.clusters.42paris.fr:/tmp/.ICE-unix/282940
 # environment
 XDG_RUNTIME_DIR = /run/user/102914
 # environment
@@ -95,7 +95,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 4066fb160648416abef5666c75881c83
+INVOCATION_ID = 041c907d72144c9283ea63bd21284be2
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -119,7 +119,7 @@ PWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 246070
+SSH_AGENT_PID = 282904
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -173,7 +173,7 @@ LESS = -R
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub/C09
+OLDPWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
 # default
 .VARIABLES := 
 # automatic
@@ -207,21 +207,19 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+DBUS_STARTER_BUS_TYPE = session
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/58f36ad2_3a5c_4f18_812e_eab4f42dabf1
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d94cb5d1_2d8e_4350_90d1_cbb7930b6fb9
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.80
+GNOME_TERMINAL_SERVICE = :1.1285
 # default
 SUFFIXES := 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
-# environment
-GJS_DEBUG_OUTPUT = stderr
 # default
 .RECIPEPREFIX := 
 # environment
@@ -231,7 +229,9 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/102914/docker.sock
 # environment
-VSCODE_PID = 248071
+VSCODE_PID = 309240
+# environment
+DBUS_STARTER_ADDRESS = unix:path=/run/user/102914/bus,guid=bce7d38c7db226fc6cc32a1b62dfacc7
 # variable set hash-table stats:
 # Load=110/1024=11%, Rehash=0, Collisions=10/132=8%
 
@@ -241,7 +241,7 @@ VSCODE_PID = 248071
 
 # Directories
 
-# . (device 54, inode 253888578): 24 files, no impossibilities.
+# . (device 56, inode 253888578): 24 files, no impossibilities.
 
 # 24 files, no impossibilities in 1 directories.
 
@@ -300,6 +300,6 @@ GNUmakefile:
 # strcache performance: lookups = 35 / hit rate = 8%
 # hash-table stats:
 # Load=32/8192=0%, Rehash=0, Collisions=1/35=3%
-# Finished Make data base on Mon Jul 25 12:21:34 2022
+# Finished Make data base on Tue Jul 26 12:59:21 2022
 
  

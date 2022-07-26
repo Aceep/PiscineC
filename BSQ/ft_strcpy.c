@@ -6,13 +6,13 @@
 /*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:25:49 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/25 15:56:02 by maaliber         ###   ########.fr       */
+/*   Updated: 2022/07/26 21:43:29 by maaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int	ft_strcpy(char *dest, char *src, int size)
+char	*ft_strcpy(char *dest, char *src, int size)
 {
 	int	i;
 
@@ -24,6 +24,6 @@ int	ft_strcpy(char *dest, char *src, int size)
 	}
 	dest[i] = '\0';
 	if (i != size)
-		return (0);
-	return (1);
+		return (NULL);
+	return (dest);
 }

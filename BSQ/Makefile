@@ -6,7 +6,7 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/25 11:23:56 by alycgaut          #+#    #+#              #
-#    Updated: 2022/07/25 20:34:52 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/07/26 17:36:53 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ NAME = bsq
 
 CC = gcc 
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 RM = rm -f 
 

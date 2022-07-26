@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mstrcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 19:53:46 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/25 20:54:44 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/26 19:51:05 by maaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_mstrcat(char *src1, char *src2, unsigned int size)
 	l_src1 = ft_strlen(src1);
 	if (size == 0)
 		return (src1);
-	dest = (char *)malloc(sizeof(char) * l_src1 + size);
+	dest = (char *)malloc(sizeof(char) * (l_src1 + size + 1));
 	if (!dest)
 		return (NULL);
 	while (i < l_src1)
@@ -41,7 +41,7 @@ char	*ft_mstrcat(char *src1, char *src2, unsigned int size)
 		i++;
 	}
 	i = 0;
-	while (i - l_src1 < size)
+	while (i < size)
 	{
 		dest[l_src1 + i] = src2[i];
 		i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_open_file.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:08:20 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/26 21:43:17 by maaliber         ###   ########.fr       */
+/*   Updated: 2022/07/27 20:59:25 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ char	*ft_read_file(int fd, int size)
 	if (!bytes_read)
 		return (NULL);
 	map_data = (char *)malloc(sizeof(char) * (bytes_read + 1));
+	if (!map_data)
+		return (NULL);
 	map_data = ft_strcpy(map_data, buffer, bytes_read);
 	while (bytes_read)
 	{
@@ -49,6 +51,6 @@ char	*ft_read_file(int fd, int size)
 		map_data = ft_mstrcat(map_data, buffer, bytes_read);
 	}
 	if (map_data[size - 1] != '\n')
-		return (NULL);
+		return (free(map_data), NULL);
 	return (map_data[size - 1] = '\0', map_data);
 }

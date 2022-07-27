@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 26 12:59:21 2022
+# Make data base, printed on Wed Jul 27 18:19:09 2022
 
 # Variables
 
@@ -45,7 +45,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 9:1288174
+JOURNAL_STREAM = 9:165233
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -61,21 +61,21 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/alycgaut/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/102914/bus,guid=bce7d38c7db226fc6cc32a1b62dfacc7
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/102914/bus,guid=8ce340f7186954ba454fe84162e0ef55
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 _ = /usr/bin/code
 # environment
-MANAGERPID = 282425
+MANAGERPID = 30487
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/102914/vscode-ipc-ece43866-435b-4a17-979e-6e174fd3de23.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/102914/vscode-ipc-0541be7b-1a40-4cd6-ae1e-0c19667b5604.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session9
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_102914_prfZFA
+KRB5CCNAME = FILE:/tmp/krb5cc_102914_8dE0pw
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -85,7 +85,7 @@ GPG_AGENT_INFO = /run/user/102914/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e3r12p23.clusters.42paris.fr:@/tmp/.ICE-unix/282940,unix/e3r12p23.clusters.42paris.fr:/tmp/.ICE-unix/282940
+SESSION_MANAGER = local/e3r9p4.clusters.42paris.fr:@/tmp/.ICE-unix/30994,unix/e3r9p4.clusters.42paris.fr:/tmp/.ICE-unix/30994
 # environment
 XDG_RUNTIME_DIR = /run/user/102914
 # environment
@@ -95,7 +95,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 041c907d72144c9283ea63bd21284be2
+INVOCATION_ID = a30ad5baae224323b4b35a5b8719d5fa
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -119,7 +119,7 @@ PWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 282904
+SSH_AGENT_PID = 30958
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -173,7 +173,7 @@ LESS = -R
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/alycgaut/piscine/piscingithub
+OLDPWD = /mnt/nfs/homes/alycgaut/piscine
 # default
 .VARIABLES := 
 # automatic
@@ -195,6 +195,8 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
+NO_AT_BRIDGE = 1
+# environment
 QT_ACCESSIBILITY = 1
 # environment
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
@@ -209,11 +211,11 @@ LC_ALL = C
 # environment
 DBUS_STARTER_BUS_TYPE = session
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d94cb5d1_2d8e_4350_90d1_cbb7930b6fb9
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/642de805_9992_4ae9_9416_0f61113490a3
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.1285
+GNOME_TERMINAL_SERVICE = :1.634
 # default
 SUFFIXES := 
 # environment
@@ -229,11 +231,11 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/102914/docker.sock
 # environment
-VSCODE_PID = 309240
+VSCODE_PID = 77367
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/102914/bus,guid=bce7d38c7db226fc6cc32a1b62dfacc7
+DBUS_STARTER_ADDRESS = unix:path=/run/user/102914/bus,guid=8ce340f7186954ba454fe84162e0ef55
 # variable set hash-table stats:
-# Load=110/1024=11%, Rehash=0, Collisions=10/132=8%
+# Load=111/1024=11%, Rehash=0, Collisions=10/133=8%
 
 # Pattern-specific Variable Values
 
@@ -241,9 +243,9 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/102914/bus,guid=bce7d38c7db226fc6cc32
 
 # Directories
 
-# . (device 56, inode 253888578): 24 files, no impossibilities.
+# . (device 58, inode 253888578): 25 files, no impossibilities.
 
-# 24 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -279,7 +281,6 @@ makefile:
 #  File has not been updated.
 
 # Not a target:
- 
 GNUmakefile:
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -291,15 +292,16 @@ GNUmakefile:
 # VPATH Search Paths
 
 # No 'vpath' search paths.
+ 
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 265 B / avg = 8 B
-# current buf: size = 8162 B / used = 265 B / count = 32 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 243 B / avg = 7 B
+# current buf: size = 8162 B / used = 243 B / count = 33 / avg = 7 B
 
-# strcache performance: lookups = 35 / hit rate = 8%
+# strcache performance: lookups = 36 / hit rate = 8%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=1/35=3%
-# Finished Make data base on Tue Jul 26 12:59:21 2022
+# Load=33/8192=0%, Rehash=0, Collisions=1/36=3%
+# Finished Make data base on Wed Jul 27 18:19:09 2022
 
  

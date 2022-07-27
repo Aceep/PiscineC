@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 13:02:03 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/20 15:15:07 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/27 13:28:13 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		j;
 
 	j = ft_size_for_malloc(size, strs, sep);
-	dest = (char *) malloc(sizeof(char) * j);
+	dest = (char *) malloc(sizeof(char) * j + 1);
 	if (!dest)
 		return (NULL);
 	j = 0;

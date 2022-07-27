@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 17:26:19 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/26 21:44:12 by maaliber         ###   ########.fr       */
+/*   Updated: 2022/07/27 21:00:55 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@ int	**ft_init_map(int length, int width)
 
 	i = 0;
 	map = (int **)malloc(sizeof(int *) * (length + 1));
+	if (!map)
+		return (NULL);
 	while (i < length)
 	{
-		map[i++] = (int *)malloc(sizeof(int) * width);
+		map[i] = (int *)malloc(sizeof(int) * width);
+		if (!map[i])
+			return (NULL);
+		i++;
 	}
 	return (map);
 }

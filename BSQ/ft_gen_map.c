@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_gen_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 17:58:14 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/26 21:44:54 by maaliber         ###   ########.fr       */
+/*   Updated: 2022/07/27 21:02:51 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,13 @@ t_mapd	*ft_init_map_descriptor(void)
 	t_mapd	*md;
 
 	md = (t_mapd *)malloc(sizeof(t_mapd));
+	if (!md)
+		return (NULL);
 	md->length = 0;
 	md->width = 0;
 	md->sym = (char *)malloc(sizeof(char) * 3);
+	if (!md->sym)
+		return (NULL);
 	md->map = NULL;
 	return (md);
 }
@@ -108,15 +112,16 @@ t_mapd	*ft_gen_map(char *arg)
 	close(fd);
 	fd = open(arg, O_RDONLY);
 	map_data = ft_read_file(fd, file_size);
+	close(fd);
 	if (map_data == NULL)
-		return (NULL);
+		return (free(map_data), NULL);
 	md = ft_init_map_descriptor();
 	if (!ft_first_line(md, map_data))
-		return (NULL);
+		return (free(md->map), free(md->sym), free(md), free(map_data), NULL);
 	if (ft_count_lines(map_data) != md->length)
-		return (NULL);
+		return (free(md->map), free(md->sym), free(md), free(map_data), NULL);
 	if (!ft_map_lines(md, map_data, file_size))
-		return (NULL);
+		return (free(md->map), free(md->sym), free(md), free(map_data), NULL);
 	ft_fill_map(md, map_data);
 	free(map_data);
 	return (md);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:25:49 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/26 21:43:29 by maaliber         ###   ########.fr       */
+/*   Updated: 2022/07/27 19:37:47 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strcpy(char *dest, char *src, int size)
 	int	i;
 
 	i = 0;
-	while (src[i] && i < size)
+	while (i < size)
 	{
 		dest[i] = src[i];
 		i++;

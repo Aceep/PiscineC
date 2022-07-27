@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:30:01 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/26 17:33:19 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/27 20:34:45 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,26 @@ int	main(int ac, char **av)
 {
 	t_mapd	*md;
 	int		max[3];
+	int		i;
 
-	while (ac > 1)
+	if (ac == 1)
+		return (ft_stdin(max), 0);
+	else
 	{
-		max[0] = 0;
-		max[1] = 0;
-		max[2] = 0;
-		md = ft_gen_map(av[ac - 1]);
-		if (md == NULL)
-			write(1, "map error\n", 10);
-		else
+		i = 1;
+		while (i < ac)
 		{
-			ft_solve(md, max);
+			max[0] = 0;
+			max[1] = 0;
+			max[2] = 0;
+			md = ft_gen_map(av[i]);
+			if (md == NULL)
+			{
+				write(1, "map error\n", 10);
+			}
+			else
+				ft_solve(md, max);
+			i++;
 		}
-		ac--;
 	}
 }

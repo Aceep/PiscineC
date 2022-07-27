@@ -6,28 +6,27 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/25 10:32:55 by alycgaut          #+#    #+#              #
-#    Updated: 2022/07/25 10:57:22 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/07/27 18:24:10 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	srcs/ft_putstr.c		\
-		srcs/ft_putchar.c		\
-		srcs/ft_strcmp.c		\
-		srcs/ft_strlen.c		\
-		srcs/ft_swap.c		\
+SRCS =	ft_putstr.c		\
+		ft_putchar.c		\
+		ft_strcmp.c		\
+		ft_strlen.c		\
+		ft_swap.c		\
 
-OBJS = ${SRCS:.c=.o}
+OBJS = $(addprefixe srcs/, ${SRCS:.c=.o})
 
 NAME = libft.a
 
 HEADERS = includes/
 
-CC = gcc
-
-CFLAGS = -Wall -Wextra -Werror
+.c.o : ${OBJS}
+		gcc	-Wall -Wextra -Werror -I -c ${HEADERS} ${OBJS}
 
 ${NAME} :	${OBJS}
-			ar rc ${NAME} ${OBJS}
+			ar -rcs ${NAME} ${OBJS}
 
 all :	${NAME}
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:04:25 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/26 21:44:27 by maaliber         ###   ########.fr       */
+/*   Updated: 2022/07/27 18:52:57 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_map_data
 	char	*sym;
 	int		**map;
 }t_mapd;
+
 char	*ft_strcpy(char *dest, char *src, int size);
 int		ft_strlen(char *str);
 char	*ft_mstrcat(char *src1, char *src2, unsigned int size);
@@ -45,5 +46,10 @@ int		ft_solve(t_mapd *map, int *max);
 void	ft_fill_x(t_mapd *md, int *max);
 int		ft_file_size(int fd);
 int		ft_count_lines(char *map_data);
+int		ft_map_lstdin(t_mapd *md, char *map_data);
+char	*ft_read_stdin(int fd);
+t_mapd	*ft_map_stdin(void);
+void	ft_stdin(int *max);
+void	ft_free(t_mapd *map);
 
 #endif

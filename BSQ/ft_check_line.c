@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:08:13 by maaliber          #+#    #+#             */
-/*   Updated: 2022/07/26 17:16:07 by maaliber         ###   ########.fr       */
+/*   Updated: 2022/07/27 20:53:13 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,18 @@
 int	ft_atoil(char *str, int *nb)
 {
 	int				i;
-	int				sign;
 
-	sign = 1;
 	i = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
+	if (!(str[0] >= '1' && str[0] <= '9'))
+		return (0);
+	while (str[i + 3] != '\0' && str[i + 3] != '\n'
+		&& (str[i] >= '0' && str[i] <= '9') && i < 9)
 	{
 		*nb = *nb * 10 + str[i] - '0';
 		i++;
 	}
-	*nb = sign * *nb;
+	if (str[i + 3] != '\n')
+		return (*nb = 0, 0);
 	return (i);
 }
 
@@ -60,7 +53,7 @@ int	ft_is_valid(char *sym, char c)
 	int	i;
 
 	i = 0;
-	while (i < 3)
+	while (i < 2)
 	{
 		if (sym[i++] == c)
 			return (1);

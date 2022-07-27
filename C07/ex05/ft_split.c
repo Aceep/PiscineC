@@ -1,161 +1,92 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/27 10:21:53 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/07/27 10:50:27 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int    is_incharset(char c, char *charset)
+int	ft_is_sep(char c, char *sep)
 {
-    int    i;
-
-    i = 0;
-    while (charset[i])
-    {
-        if (charset[i] == c)
-            return (1);
-        i++;
-    }
-    return (0);
-}
-
-char    **ft_alloc_tab(char *str, char *charset)
-{
-    int        tab_size;
-    char    **tab;
-    int        i;
-
-    tab_size = 0;
-    i = 0;
-    while (str[i])
-    {
-        if (!is_incharset(str[i], charset)
-            && (is_incharset(str[i + 1], charset) || str[i + 1] == 0))
-            tab_size++;
-        i++;
-    }
-    tab = (char **)malloc(sizeof(char *) * tab_size + 1);
-    if (!tab)
-        return (NULL);
-    return (tab);
-}
-
-int    ft_get_str(char **tab, char *str, char *charset, int idx_l)
-{
-    int    size;
-    int    i;
-
-    size = 1;
-    while (!is_incharset(str[size], charset) && str[size])
-            size++;
-    tab[idx_l] = (char *)malloc(sizeof(char) * size);
-    if (tab[idx_l] == 0)
-        return (0);
-    i = 0;
-    while (i < size)
-    {
-        tab[idx_l][i] = str[i];
-        i++;
-    }
-    tab[idx_l][size] = 0;
-    return (size);
-}
-
-char    **ft_split(char *str, char *charset)
-{
-    char    **tab;
-    int        idx_l;
-    int        i;
-
-    tab = ft_alloc_tab(str, charset);
-    i = 0;
-    idx_l = 0;
-    while (str[i])
-    {
-        if (!is_incharset(str[i], charset) && str[i])
-        {
-            i += ft_get_str(tab, str + i, charset, idx_l);
-            idx_l++;
-        }
-        else
-            i++;
-    }
-    tab[idx_l] = 0;
-    return (tab);
-}
-/*
-#include <stdlib.h>
-#include <stdio.h>
-
-char	**ft_split(char *str, char *charset);
-
-int		c_strlen(char *str)
-{
-	int len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-int		c_strctn(char *str1, char *str2, int at)
-{
-	int	len;
 	int	i;
 
-	len = c_strlen(str2);
 	i = 0;
-	while (i < len)
+	while (sep[i])
 	{
-		str1[at + i] = str2[i];
+		if (sep[i] == c)
+			return (1);
 		i++;
 	}
-	str1[at + i] = 0;
-	return (len + at);
+	return (0);
 }
 
-char	*c_strautojoin(char **strs, char *sep)
+char	**ft_len_final_str(char *str, char *sep)
 {
-	char	*str;
-	int		len;
-	int		seplen;
+	int		len_final_str;
+	char	**tab;
 	int		i;
-	int		j;
 
-	len = 1;
-	seplen = c_strlen(sep);
+	len_final_str = 0;
 	i = 0;
-	while (strs[i] != NULL)
+	while (str[i])
 	{
-		len += c_strlen(strs[i]);
-		if (strs[i + 1] != NULL)
-			len += seplen;
+		if (!ft_is_sep(str[i], sep)
+			&& (ft_is_sep(str[i + 1], sep) || str[i + 1] == 0))
+			len_final_str++;
 		i++;
 	}
-	str = malloc(len * sizeof(char));
-	i = 0;
-	j = 0;
-	while (strs[j])
-	{
-		i = c_strctn(str, strs[j++], i);
-		if (strs[j])
-			i = c_strctn(str, sep, i);
-	}
-	return (str);
+	tab = malloc(sizeof(char *) * len_final_str + 1);
+	if (!tab)
+		return (NULL);
+	return (tab);
 }
 
-int		main(void)
+int	ft_get_str(char **tab, char *str, char *sep, int line)
 {
-	char **tab;
+	int	size;
+	int	i;
 
-	tab = ft_split("Ceci&est$un##############################################################################################################################################################succes@!", "&$#@");
-	printf("%s\n", c_strautojoin(tab, " "));
-	tab = ft_split("Success", "CUT");
-	printf("%s\n", c_strautojoin(tab, " "));
-	tab = ft_split("Success", "");
-	printf("%s\n", c_strautojoin(tab, " "));
-	tab = ft_split("", "");
-	printf("OK\n");
-	tab = ft_split("", "CUT");
-	printf("OK\n");
-	tab = ft_split("       ", "       ");
-	printf("OK\n");
-	tab = ft_split("         ", "       ");
-	printf("OK\n");
-}*/
+	size = 1;
+	while (!ft_is_sep(str[size], sep) && str[size])
+		size++;
+	tab[line] = (char *)malloc(sizeof(char) * size);
+	if (tab[line] == 0)
+		return (0);
+	i = 0;
+	while (i < size)
+	{
+		tab[line][i] = str[i];
+		i++;
+	}
+	tab[line][size] = 0;
+	return (size);
+}
+
+char	**ft_split(char *str, char *sep)
+{
+	char	**final_str;
+	int		line;
+	int		i;
+
+	final_str = ft_len_final_str(str, sep);
+	i = 0;
+	line = 0;
+	while (str[i])
+	{
+		if (!ft_is_sep(str[i], sep) && str[i])
+		{
+			i += ft_get_str(final_str, str + i, sep, line);
+			line++;
+		}
+		else
+			i++;
+	}
+	final_str[line] = 0;
+	return (final_str);
+}

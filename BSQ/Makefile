@@ -6,7 +6,7 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/25 11:23:56 by alycgaut          #+#    #+#              #
-#    Updated: 2022/07/26 17:36:53 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/07/27 20:57:38 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRCS =	bsq.c \
 		ft_print_map.c 	\
 		ft_putchar.c 	\
 		ft_solve.c 	\
-		ft_strcpy.c 	\
+		ft_strcpy.c  \
+		ft_stdin.c
+
 
 OBJS = ${SRCS:.c=.o}
 
@@ -29,7 +31,7 @@ NAME = bsq
 
 CC = gcc 
 
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f 
 

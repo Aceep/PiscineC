@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_solve.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:29:38 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/26 21:43:47 by maaliber         ###   ########.fr       */
+/*   Updated: 2022/07/27 21:00:38 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,19 @@ int	sum(int x, int y, int size, t_mapd *map)
 	return (sum);
 }
 
-void	ft_free(t_mapd *map)
+void	ft_free(t_mapd *md)
 {
 	int	x;
 
 	x = -1;
-	while (++ x < map->length)
-		free(map->map[x]);
-	free(map);
+	if (md->map != NULL)
+	{
+		while (++ x <= md->length)
+			free(md->map[x]);
+	}
+	free(md->map);
+	free(md->sym);
+	free(md);
 }
 
 int	ft_solve(t_mapd *map, int *max)

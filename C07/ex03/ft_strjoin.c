@@ -39,17 +39,17 @@ int	ft_size_for_malloc(int size, char **strs, char *sep)
 
 char	*ft_putstr(char *dest, char *strs)
 {
-	int	t;
 	int	i;
+	int	destlen;
 
-	t = 0;
 	i = 0;
-	t = ft_strlen(dest);
-	while (strs[i])
+	destlen = ft_strlen(dest);
+	while (src[i])
 	{
-		dest[t + i] = strs[i];
-		i ++;
+		dest[destlen + i] = strs[i];
+		i++;
 	}
+	dest[destlen + i] = 0;
 	return (dest);
 }
 
@@ -62,6 +62,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	dest = (char *) malloc(sizeof(char) * j + 1);
 	if (!dest)
 		return (NULL);
+	if (size == 0)
+		return (res);
 	j = 0;
 	while (j < size)
 	{

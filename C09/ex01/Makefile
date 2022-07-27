@@ -10,30 +10,27 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	ft_putstr.c		\
-		ft_putchar.c		\
-		ft_strcmp.c		\
-		ft_strlen.c		\
-		ft_swap.c		\
+SRCS	= srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
 
-OBJS = $(addprefixe srcs/, ${SRCS:.c=.o})
+NAME	= libft.a
 
-NAME = libft.a
+OBJS	=  ${SRCS:.c=.o}
 
-HEADERS = includes/
+HEADERS	= includes/
 
-.c.o : ${OBJS}
-		gcc	-Wall -Wextra -Werror -I -c ${HEADERS} ${OBJS}
+.c.o	:
+		gcc -Wall -Wextra -Werror -I ${HEADERS} -c $< -o ${<:.c=.o}
 
-${NAME} :	${OBJS}
-			ar -rcs ${NAME} ${OBJS}
+${NAME} : ${OBJS}
+		ar rc ${NAME} ${OBJS}
 
-all :	${NAME}
+all : ${NAME}
 
-clean :	
-			rm -f ${OBJS}
 
-fclean :	clean
-			rm -f ${NAME}
+clean :
+		rm -f ${OBJS}
 
-re :	fclean all
+fclean : clean
+		rm -f ${NAME}
+
+re : fclean all

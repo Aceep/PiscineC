@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:33:18 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/27 17:08:12 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/28 17:08:45 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_putnbr_base(long long int nbr, char *base, char *fnbr)
 		i = 1;
 	}
 	l_nbrf --;
-	//printf("%lld",nb);
+	
 	while (nb >= l_base)
 	{
 		fnbr[l_nbrf] = base[nb % l_base];
@@ -75,4 +75,13 @@ void	ft_putnbr_base(long long int nbr, char *base, char *fnbr)
 	}
 	if (nb < l_base)
 		fnbr[l_nbrf] = base[nb];
+}
+#include <stdio.h>
+
+char *ft_convert_base(char *nbr, char *base_from, char *base_to);
+
+int	main(void)
+{
+	printf("42:%s\n", ft_convert_base("--2a", "0123456789abcdef", "0123456789"));
+	printf("-2a:%s\n", ft_convert_base("-42", "0123456789", "0123456789abcdef"));
 }

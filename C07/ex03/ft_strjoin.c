@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 13:02:03 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/27 13:28:13 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/28 16:58:52 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_size_for_malloc(int size, char **strs, char *sep)
 	int	count;
 
 	if (size == 0)
-		return (0);
+		return (1);
 	i = 0;
 	count = 0;
 	while (i < size)

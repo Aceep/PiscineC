@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:16:03 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/07/27 17:09:11 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/07/28 17:05:07 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,3 +121,4 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	printf("%s", nbr_final);
 	return (nbr_final);
 }
+

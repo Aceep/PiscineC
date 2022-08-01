@@ -1,0 +1,17 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/alycgaut/piscine/piscingithub/Rush02'
+cc -Wall -Wextra -Werror   -c -o main.o main.c
+cc -Wall -Wextra -Werror   -c -o ft_atoi.o ft_atoi.c
+cc -Wall -Wextra -Werror   -c -o ft_check_argument.o ft_check_argument.c
+cc -Wall -Wextra -Werror   -c -o ft_putstr.o ft_putstr.c
+cc -Wall -Wextra -Werror   -c -o ft_strcmp.o ft_strcmp.c
+cc -Wall -Wextra -Werror   -c -o ft_strlen.o ft_strlen.c
+cc -Wall -Wextra -Werror   -c -o libft.o libft.c
+cc -Wall -Wextra -Werror   -c -o ft_dico.o ft_dico.c
+cc -Wall -Wextra -Werror   -c -o ft_compare_to_find.o ft_compare_to_find.c
+cc -Wall -Wextra -Werror   -c -o ft_strstr.o ft_strstr.c
+cc -Wall -Wextra -Werror   -c -o ft_strdup.o ft_strdup.c
+cc -Wall -Wextra -Werror   -c -o display_numbers.o display_numbers.c
+cc -Wall -Wextra -Werror -o rush-02 main.o ft_atoi.o ft_check_argument.o ft_putstr.o ft_strcmp.o ft_strlen.o libft.o ft_dico.o ft_compare_to_find.o ft_strstr.o ft_strdup.o display_numbers.o
+make: Leaving directory '/mnt/nfs/homes/alycgaut/piscine/piscingithub/Rush02'
+ 
